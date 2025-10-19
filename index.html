@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>20/10</title>
+<style>
+  body {
+    margin:0; padding:0;
+    background:#ffd6e8;
+    overflow:hidden;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    display:flex; justify-content:center; align-items:center;
+    height:100vh; text-align:center;
+  }
+  .msg {
+    max-width:80%;
+    font-size:22px;
+    color:#b1004f;
+    opacity:0;
+    animation: fadeIn 2s forwards, pulse 2.5s infinite ease-in-out 2s;
+  }
+  @keyframes fadeIn { to {opacity:1;} }
+  @keyframes pulse {
+    0%,100% {transform:scale(1);}
+    50% {transform:scale(1.05);}
+  }
+  .heart {
+    position:fixed;
+    top:-50px;
+    font-size:20px;
+    animation: fall linear forwards;
+    color:rgba(255,0,100,0.6);
+  }
+  @keyframes fall {
+    to {transform:translateY(110vh); opacity:0;}
+  }
+</style>
+</head>
+<body>
+<div class="msg">Gửi người xink gái, tink quái, dễ thương, mỏ hỗn niềm dui nho nhỏ trong ngày đặc biệt. Chúc dợ iu 20/10 vui nhá</div>
+
+<script>
+const hearts = 25;
+for (let i=0;i<hearts;i++){
+  let h=document.createElement('div');
+  h.className='heart';
+  h.textContent='❤';
+  h.style.left=Math.random()*100+'vw';
+  h.style.animationDuration = (4+Math.random()*4)+'s';
+  document.body.appendChild(h);
+}
+</script>
+</body>
+</html>
